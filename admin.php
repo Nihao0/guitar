@@ -29,7 +29,9 @@ require_once('authorize.php');
 
 if ($row['approved'] == '0'){
 	
-	echo '/<a href
+	echo '/<a href="approvescore.php?id=' . $row['id']. '&amp:date=' . $row['date'] . 
+	'&amp;name=' . $row ['name'] . '&amp;score=' . $row['score'] .
+	'&amp;screenshot=' . $row['screenshot'] . '
 	
 	
 echo '</table>';
