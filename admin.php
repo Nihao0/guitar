@@ -26,9 +26,15 @@ require_once('authorize.php');
 				'&amp;screenshot=' . $row['screenshot'] . '">Delete</a></td></tr>';
 				
 	}
-	echo '</table>';
+
+if ($row['approved'] == '0'){
 	
-	mysqli_close($dbc);
+	echo '/<a href
+	
+	
+echo '</table>';
+	
+mysqli_close($dbc);
 ?>
 
 </html>
