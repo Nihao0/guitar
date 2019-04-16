@@ -45,6 +45,21 @@ require_once('authorize.php';
 		echo'<p class="error"> Troubles with moderated score.</p>';
 	}
   }
-	
-	echo '<p><a href="admin.php">&lt;&lt; Back to score list </a></p>';
+else if (isset($id) && isset($date) && isset($name) &&
+		isset($score) && isset ($screenshot)) {
+echo '<p>Are you sure you want to remove this rating?</p>';
+echo '<p><strong>Name: </strong>' . $name . '<br /><strong>Date: </strong>' . $date .
+		'<br /><strong>Score: </strong>' . $score . '</p>';
+echo '<form method="post" action="removescore.php">';
+echo '<input type="radio" name="confirm value="Yes" /> Yes ';
+echo '<input type="radio" name="confirm" value="No" checked="checked" /> No <br />';
+echo '<input type="submit" value="Delete" name="submit" />';
+echo '<input type="hidden" name="id" value="' . $id . '" />';
+echo '<input type="hidden" name="id" value="' . $id . '" />';
+echo '<input type="hidden" name="score" value="' . $score . '" />';
+echo '</form>';
+}	
+
+echo '<p><a href="admin.php">&lt;&lt; Back to score list </a></p>';
+
 ?>
