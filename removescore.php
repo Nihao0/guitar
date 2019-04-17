@@ -53,7 +53,7 @@ require_once('authorize.php');
 	 $name . ' been succesfully deleted from database.</p>';
 	}
 	else {
-		echo '<p class="error"> Score not delete.</p>';
+		echo '<p class="error"> The high score was not removed.</p>';
 	}
 }
 else if (isset($id) && isset($date) && isset($name) &&
