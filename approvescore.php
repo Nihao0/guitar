@@ -39,27 +39,26 @@ require_once('authorize.php';
 	
 	
 	//Вывод на экран пользователя подтверджения об успешном санкционировании
-	echo '<p>Score ' . $score . ' for user ' . $name . 'sucessfully moderated';
-	}
-	else {
-		echo'<p class="error"> Troubles with moderated score.</p>';
-	}
+	  echo '<p>The high score of ' . $score . ' for ' . $name . ' was successfully approved.';
+    }
+    else {
+      echo '<p class="error">Sorry, there was a problem approving the high score.</p>';
+    }
   }
-else if (isset($id) && isset($date) && isset($name) &&
-		isset($score) && isset ($screenshot)) {
-echo '<p>Are you sure you want to remove this rating?</p>';
-echo '<p><strong>Name: </strong>' . $name . '<br /><strong>Date: </strong>' . $date .
-		'<br /><strong>Score: </strong>' . $score . '</p>';
-echo '<form method="post" action="removescore.php">';
-echo '<input type="radio" name="confirm value="Yes" /> Yes ';
-echo '<input type="radio" name="confirm" value="No" checked="checked" /> No <br />';
-echo '<input type="submit" value="Delete" name="submit" />';
-echo '<input type="hidden" name="id" value="' . $id . '" />';
-echo '<input type="hidden" name="id" value="' . $id . '" />';
-echo '<input type="hidden" name="score" value="' . $score . '" />';
-echo '</form>';
-}	
+  else if (isset($id) && isset($name) && isset($date) && isset($score)) {
+    echo '<p>Are you sure you want to approve the following high score?</p>';
+    echo '<p><strong>Name: </strong>' . $name . '<br /><strong>Date: </strong>' . $date .
+      '<br /><strong>Score: </strong>' . $score . '</p>';
+    echo '<form method="post" action="approvescore.php">';
+    echo '<img src="' . GW_UPLOADPATH . $screenshot . '" width="160" alt="Score image" /><br />';
+    echo '<input type="radio" name="confirm" value="Yes" /> Yes ';
+    echo '<input type="radio" name="confirm" value="No" checked="checked" /> No <br />';
+    echo '<input type="submit" value="Submit" name="submit" />';
+    echo '<input type="hidden" name="id" value="' . $id . '" />';
+    echo '<input type="hidden" name="name" value="' . $name . '" />';
+    echo '<input type="hidden" name="score" value="' . $score . '" />';
+    echo '</form>';
+  }
 
-echo '<p><a href="admin.php">&lt;&lt; Back to score list </a></p>';
-
+  echo '<p><a href="admin.php">&lt;&lt; Back to admin page</a></p>';
 ?>
