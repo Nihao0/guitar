@@ -1,7 +1,14 @@
 <?php
 require_once('authorize.php';
 ?>
-
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Guitar Wars - Approve a High Score</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+  <h2>Guitar Wars - Approve a High Score</h2>
 
 <?php
  require_once('appvars.php');
@@ -13,6 +20,7 @@ require_once('authorize.php';
     $date = $_GET['date'];
     $name = $_GET['name'];
     $score = $_GET['score'];   
+    $screenshot = $_GET['screenshot'];
   }
   else if (isset($_POST['id']) && isset($_POST['name']) && isset($_POST['score'])) {
     // Grab the score data from the POST
@@ -21,7 +29,7 @@ require_once('authorize.php';
     $score = $_POST['score'];
   }
   else {
-    echo '<p class="error">Sorry, no high score was specified for removal.</p>';
+    echo '<p class="error">Sorry, no high score was specified for approval.</p>';
   }
 
   if (isset($_POST['submit'])) {
@@ -62,3 +70,5 @@ require_once('authorize.php';
 
   echo '<p><a href="admin.php">&lt;&lt; Back to admin page</a></p>';
 ?>
+</body>
+</html>
