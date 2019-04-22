@@ -22,7 +22,7 @@
 	$screenshot_size = $_FILES['screenshot']['size'];
 	$screenshot_type = $_FILES['screenshot']['type'];
 	
-    if (!empty($name) && !empty($score) && !empty($screenshot)) {
+    if (!empty($name) && is_numeric($score) && !empty($screenshot)) {
     //Перемещение файла в постоянный каталог для файлов изображений
 	if ((($screenshot_type == 'image/gif') || ($screenshot_type == 'image/jpeg') ||
 	($screenshot_type == 'image/png') || ($screenshot_type == 'image/pjpeg') &&
